@@ -1,0 +1,346 @@
+fun powerFor(a: Int, b: Int): Int {
+    var result = 1
+    for (i in 1..b) {
+        result *= a
+    }
+    return result
+}
+
+fun powerWhile(a: Int, b: Int): Int {
+    var result = 1
+    var i = 1
+    while (i <= b) {
+        result *= a
+        i++
+    }
+    return result
+}
+
+fun powerRepeat(a: Int, b: Int): Int {
+    var result = 1
+    repeat(b) {
+        result *= a
+    }
+    return result
+}
+
+data class Operation(val a: Int, val b: Int, val operator: String)
+
+fun fib(n: Int) {
+    var first = 1
+    var second = 1
+
+    if (n >= 1) print("$first ")
+    if (n >= 2) print("$second ")
+
+    for (i in 3..n) {
+        val next = first + second
+        print("$next ")
+        first = second
+        second = next
+    }
+}
+
+fun printArray(arr: IntArray) {
+    for (num in arr) {
+        print("$num ")
+    }
+    println()
+}
+
+fun insertionSort(arr: IntArray) {
+    for (i in 1 until arr.size) {
+        val key = arr[i]
+        var j = i - 1
+
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j]
+            j--
+        }
+
+        arr[j + 1] = key
+    }
+}
+
+fun bubbleSort(arr: IntArray) {
+    for (i in 0 until arr.size - 1) {
+        for (j in 0 until arr.size - 1 - i) {
+            if (arr[j] > arr[j + 1]) {
+                val temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
+            }
+        }
+    }
+}
+
+open class Animal(val name: String, val age: Int, val species: String) {
+
+    open fun move() {
+        println("$name is moving.")
+    }
+
+    override fun toString(): String {
+        return "Hi. I'm a $species. I'm $age years old and my name is $name."
+    }
+}
+
+class Fish(name: String, age: Int, species: String) : Animal(name, age, species) {
+    override fun move() {
+        println("$name is swimming.")
+    }
+}
+
+class Dog(name: String, age: Int, species: String) : Animal(name, age, species) {
+    override fun move() {
+        println("$name is running.")
+    }
+}
+
+
+fun main() {
+    
+    //VARIABLES AND BASIC OPERATIONS//
+    
+    /*
+    var a = 5
+    var b = 6
+
+    println(a + b)
+
+    var c = a + b
+
+    println("The result of " + a + " + " + b + " = " + c)
+    println("The result of $a + $b = $c")
+
+   	c++
+    println("The value of incremented c is $c")
+    */
+    
+    
+    /*
+    val a = 5
+    val b = 6
+
+    println(a + b)
+
+    val c = a + b
+
+    println("The result of " + a + " + " + b + " = " + c)
+    println("The result of $a + $b = $c")
+	
+    // c++ //
+    println("The value of incremented c is $c")
+    */
+    
+   /*When val is used instead of var, the variable cannot be changed after it is assigned. 
+   Because of that, c++ causes an error. var is mutable, but val is read-only.*/
+ 
+    /*
+    val inputReadln: String = "5"
+    val inputReadLine: String? = "five"
+
+    println("readln() simulated input: $inputReadln")
+    println("readLine() simulated input: $inputReadLine")
+
+    val number1 = inputReadln.toIntOrNull()
+    val number2 = inputReadLine?.toIntOrNull()
+
+    if (number1 != null) {
+        println("Converted from readln(): $number1")
+    } else {
+        println("Converted from readln(): invalid number")
+    }
+
+    if (number2 != null) {
+        println("Converted from readLine(): $number2")
+    } else {
+        println("Converted from readLine(): invalid number")
+    }
+    */
+    
+    /*
+    The difference is that readln() returns a non-null String,
+    while readLine() returns a nullable String (String?).
+
+    When the input is 5, it can be converted to Int successfully.
+    When the input is five, it cannot be converted to Int because it is text, not a numeric value.
+    */
+    
+    //CONTROL FLOW//
+    
+    //3.1 Calculator, 3.2 Extended operations, 3.3 Power function, 3.4 looped calculator, 3.5 Fibonacci//
+   
+    /*
+    val operations = listOf(
+        Operation(5, 3, "+"),
+        Operation(5, 3, "-"),
+        Operation(5, 3, "*"),
+        Operation(5, 3, "power"),
+        Operation(5, 0, "factorial"),
+        Operation(7, 0, "fib"),
+        Operation(0, 0, "exit")
+    )
+    
+    var index = 0
+    
+    
+    while (true) {
+        val current = operations[index]
+        index++
+        val a = current.a
+        val b = current.b
+        val operator = current.operator
+
+        println("Input: $a $b $operator")
+        
+        if (operator == "exit") {
+            println("Calculator closed.")
+            break
+        }
+
+        when (operator) {
+            "+" -> println("Result: ${a + b}")
+            "-" -> println("Result: ${a - b}")
+            "*" -> println("Result: ${a * b}")
+            "/" -> {
+                if (b != 0) {
+                    println("Result: ${a / b}")
+                } else {
+                    println("Error: division by zero")
+                }
+            }
+            "power" -> {
+                println("Using for: ${powerFor(a, b)}")
+                println("Using while: ${powerWhile(a, b)}")
+                println("Using repeat: ${powerRepeat(a, b)}")
+            }
+            "factorial" -> {
+                if (a < 0) {
+                    println("Error: factorial is not defined for negative numbers")
+                } else {
+                    var result = 1
+                    for (i in 1..a) {
+                        result *= i
+                    }
+                    println("Result: $result")
+                }
+            }
+            "fib" -> {
+                val n = a
+                print("Output: ")
+   				fib(n)
+            }
+            else -> println("Invalid operator")
+        }
+        println()
+    }
+    */
+
+    /*
+    This calculator uses control flow with when.
+    Depending on the operator, the program performs a different operation.
+    Division uses if to prevent division by zero.
+    Power uses a as the base and b as the exponent.
+    Factorial uses only a.
+    Fibonacci uses only a.
+    */
+    
+    //3.6 Pyramid//
+    
+    /*
+    val n = 6
+    for (i in n downTo 1) {
+        for (j in 1..i) {
+            print("*")
+        }
+        println()
+    }
+    */
+    
+    //3.7 Reverse string//
+    
+    /*
+    val text = "hello"
+    var reversed = ""
+    for (i in text.length - 1 downTo 0) {
+        reversed += text[i]
+    }
+    println("Input: $text")
+    println("Output: $reversed")
+    */
+    
+    
+    //4 ARRAYS//
+    
+    //4.1 - 4.4//
+    
+    /*
+    val names = arrayOf("Anna", "John", "Mark")
+
+    println("All elements:")
+    for (name in names) {
+        println(name)
+    }
+
+    println()
+
+    println("With indices:")
+    for (i in names.indices) {
+        println("$i: ${names[i]}")
+    }
+
+    println()
+
+    var longestName = names[0]
+
+    for (name in names) {
+        if (name.length > longestName.length) {
+            longestName = name
+        }
+    }
+
+    println("Longest name: $longestName")
+    */
+    
+    //4.5 Create the array consisting of 100 of randomly generated numbers//
+    
+   /* 
+    val numbers = IntArray(100) { (0..99).random() }
+
+    println("Array before sorting:")
+    printArray(numbers)
+
+    insertionSort(numbers)
+    bubbleSort(numbers)
+
+    println()
+    println("Array after insertion sort:")
+    printArray(numbers)
+    
+    println()
+    println("Array after bubble sort:")
+    printArray(numbers)
+    */
+    
+	//CLASSES AND OBJECTS//
+    
+    /*
+    val animal1 = Animal("Puffy", 6, "spider")
+    println(animal1)
+    animal1.move()
+
+    val fish = Fish("Nemo", 2, "fish")
+    println(fish)
+    fish.move()
+
+    val dog = Dog("Max", 4, "dog")
+    println(dog)
+    dog.move()
+
+    println()
+
+    val animal: Animal = Fish("Goldie", 1, "fish")
+    animal.move()
+    */
+}
