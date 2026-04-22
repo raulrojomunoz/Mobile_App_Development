@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="layout_background">#1966D9</color>
+    <color name="holo_green_dark">#1C7E11</color>
+    <color name="holo_orange_dark">#DC6209</color>
+    <color name="background_calculator">#F7F7F7</color>
+    <color name="line_color">#9E9E9E</color>
+    <color name="circle_background">#5511CA</color>
+
+</resources>
