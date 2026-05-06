@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="background_calculator">#F7F7F7</color>
-    <color name="line_color">#9E9E9E</color>
-    <color name="circle_background">#5511CA</color>
-</resources>
