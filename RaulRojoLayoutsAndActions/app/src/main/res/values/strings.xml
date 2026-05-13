@@ -20,6 +20,10 @@
     <string name="sign_clear">C</string>
     <string name="decimal_point">.</string>
     <string name="sign_resolve">=</string>
+    <string name="write_to_logcat">Write to LogCat</string>
+    <string name="write_to_logcat_listener">Write to LogCat - Listener</string>
+
+
 
 
 
